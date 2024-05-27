@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS variables</title>
+</head>
+<style>
+
+    :root{
+        --color : blue;
+        --seccolor: orange;
+        --defpad : 40px;
+        --defopacity:0.3;
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+
+    }
+    .nav{
+        /* background-color: aqua; */
+        background-color: var(--color);
+    }
+
+    .container{
+        /* background-color: rgb(28, 201, 201); */
+        background-color: var(--seccolor);
+    }
+
+    ul li{
+        list-style: none;
+        opacity: var(--defopacity);
+        /* padding: 15px; */
+        padding: var(--defpad);
+        border: 2px solid var(--seccolor);
+
+    }
+    
+    ul{
+        display: flex;
+    }
+
+    ul li:first-child{
+        --color : rgb(130, 130, 231);/*ye wala color use hoga kyuki fir se declatre kr dia yaha pr...*/
+        background-color: var(--color , rgb(14, 196, 14));/*blue use hoga agar koi --color define hi na ho to.. (fallback)*/
+
+    }
+
+</style>
+<body>
+    <div class="nav">
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum illum incidunt praesentium sapiente ipsum quasi, ipsam exercitationem explicabo autem voluptates sed perferendis vel nihil sint aspernatur officia eveniet eaque. Minus iure ipsam perspiciatis eaque nostrum ducimus molestiae temporibus voluptatem architecto harum fugit nulla quidem animi cum aspernatur, in, consectetur ex, dolorem placeat ipsa aut?
+    </div>
+</body>
+</html>
